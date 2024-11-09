@@ -1,0 +1,12 @@
+Identifier     Type     
+------------------------------
+main           int     
+Variable       int     
+declarations   int     
+x              int     
+y              int     
+z              int     
+isValid        bool    
+radius         float   
+area           float   
+letter         char    

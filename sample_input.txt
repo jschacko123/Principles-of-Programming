@@ -1,0 +1,31 @@
+int main() {
+    // Variable declarations
+    int x, y[5], z;
+    bool isValid;
+    float radius, area;
+    char letter;
+
+    // Assignments and expressions
+    x = 10;
+    y[2] = x * 2 + 3;
+    radius = 3.14 * y[2];
+    isValid = true;
+    letter = 'A';
+
+    // If statement with else
+    if (x > 0) {
+        x = x - 1;
+    } else {
+        x = x + 1;
+    }
+
+    // While loop
+    while (x < 10 && isValid) {
+        x = x + 1;
+        area = 3.14 * (radius * radius);
+    }
+
+    // Logical expressions
+    z = (x == 10) || (y[2] != 0);
+    isValid = x >= 0 && y[2] < 10;
+}
