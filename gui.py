@@ -36,7 +36,7 @@ def load_file():
 def run_lexer():
     source_code = input_text.get(1.0, tk.END)
     if not source_code.strip():
-        messagebox.showwarning("no input!", "please load or enter source code to analyze.")
+        messagebox.showwarning("no input!", "please load or enter source code to analyze <3")
         return
     
     tokens = lexical_analyzer(source_code)
