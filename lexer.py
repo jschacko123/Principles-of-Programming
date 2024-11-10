@@ -72,13 +72,24 @@ def tokenize(code):
             add_to_symbol_table(token_type, lexeme)
     return tokens
 
+import os
+
 def write_symbol_table_to_file():
-    """Writes the symbol table to a file named 'symbol_table.txt'."""
-    with open('symbol_table.txt', 'w') as f:
-        f.write("Identifier     Type     \n")
-        f.write("------------------------------\n")
+    """Appends the symbol table to 'symbol_table.txt' without overwriting existing content."""
+    file_path = 'symbol_table.txt'
+    # Check if the file already exists to avoid rewriting the header every time
+    file_exists = os.path.isfile(file_path)
+
+    with open(file_path, 'a') as f:  # Open file in append mode
+        # Write header only if the file is new
+        if not file_exists:
+            f.write("Identifier     Type     \n")
+            f.write("------------------------------\n")
+        
+        # Append each new identifier to the file
         for identifier, properties in symbol_table.items():
-            f.write(f'{identifier:<14} {properties["type"]:<8}\n') # writing text to the file and aligning it
+            f.write(f'{identifier:<14} {properties["type"]:<8}\n')
+
 
 # Read from the sample input file
 with open('sample_input.txt', 'r') as file:
